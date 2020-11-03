@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MapsActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     />
+    <LinearLayout
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/myplace"
+        android:textAllCaps="false"
+        android:background="@drawable/search_bg"
+       android:textColor="@android:color/black"
+        android:text="My Place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
+<androidx.appcompat.widget.SearchView
+    android:visibility="visible"
+    android:id="@+id/sv_location"
+    map:queryHint="Search ...."
+    map:iconifiedByDefault="false"
+    android:layout_margin="10dp"
+    android:elevation="5dp"
+    android:background="@drawable/search_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_below="@id/sv_location"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:paddingLeft="15dp"
+            android:gravity="center_vertical"
+            android:visibility="visible"
+            android:id="@+id/textview"
+           android:hint="Search your location here ..."
+            map:iconifiedByDefault="false"
+            android:elevation="5dp"
+            android:paddingRight="15dp"
+            android:drawableRight="@android:drawable/ic_menu_search"
+            android:background="@drawable/search_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+<!--    <fragment android:id="@+id/autocomplete_fragment"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            />-->
+    </RelativeLayout>
+
+</RelativeLayout>
